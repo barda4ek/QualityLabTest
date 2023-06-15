@@ -28,6 +28,7 @@ import java.time.Duration;
 
 public class QualityLabCucumberRunner  extends AbstractTestNGCucumberTests{
     public static WebDriver driver;
+    public BasePage basePage;
 
     @BeforeClass(alwaysRun = true)
     public void beforeClass() {
@@ -35,7 +36,7 @@ public class QualityLabCucumberRunner  extends AbstractTestNGCucumberTests{
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         driver.manage().window().maximize();
-
+        basePage = new BasePage(driver);
     }
 
     @AfterClass(alwaysRun = true)

@@ -15,7 +15,7 @@ import pageobjects.SentLettersPage;
 
 public class QualityLabCucumber extends QualityLabCucumberRunner {
 
-    protected BasePage basePage;
+    // BasePage basePage;
     protected NewLetterPage newLetterPage;
     protected MailPage mailPage;
     protected SentLettersPage sentLettersPage;
