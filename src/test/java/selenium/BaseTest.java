@@ -23,6 +23,6 @@ public class BaseTest {
         driver.close();
     }
 
-    //testing GIT1
+    //second GIT2 test
 
 }
