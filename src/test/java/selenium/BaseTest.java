@@ -23,6 +23,6 @@ public class BaseTest {
         driver.close();
     }
 
-    //try to make into master
+    //comment to remote_master
 
 }
