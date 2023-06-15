@@ -23,6 +23,5 @@ public class BaseTest {
         driver.close();
     }
 
-    //second GIT2 test
-
+    //LOCAL master
 }
