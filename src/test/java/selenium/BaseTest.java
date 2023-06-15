@@ -23,5 +23,5 @@ public class BaseTest {
         driver.close();
     }
 
-    //LOCAL master
+    //comment for remote2
 }
