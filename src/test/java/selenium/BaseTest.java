@@ -25,4 +25,5 @@ public class BaseTest {
 
     //comment to remote_master
     //master second comment
+    // empty commit in master2
 }
