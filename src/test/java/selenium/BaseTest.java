@@ -23,7 +23,5 @@ public class BaseTest {
         driver.close();
     }
 
-    //comment to remote_master
-    //master second comment
-    // empty commit in master2
+    //
 }
