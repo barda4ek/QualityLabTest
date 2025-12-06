@@ -11,7 +11,7 @@ import java.time.Duration;
 public class BaseTest {
     public WebDriver driver;
     @BeforeClass
-    void loginTest2 () {
+    void setUp() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
@@ -19,9 +19,7 @@ public class BaseTest {
     }
 
     @AfterClass
-    void exitTest() {
+    void tearDown() {
         driver.close();
     }
-
-    //ВАЖНЫЙ КОММИТ МАСТЕР ПЕРЕД АПДЕЙТОМ
 }

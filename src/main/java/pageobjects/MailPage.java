@@ -8,7 +8,6 @@ import static org.openqa.selenium.support.PageFactory.initElements;
 
 public class MailPage {
     protected WebDriver driver;
-    String url = "https://e.mail.ru/compose/";
 
     public MailPage(WebDriver driver) {
         initElements(driver, this);
@@ -20,7 +19,7 @@ public class MailPage {
     @FindBy(css = ".ph-project-promo-close-icon__container")
     protected WebElement closePopUpButton;
 
-    public void createLetterButtonClick() {
+    public void clickCreateLetterButton() {
         closePopUpButton.click();
         createLetterButton.click();
     }

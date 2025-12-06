@@ -23,16 +23,13 @@ public class LoginTest extends BaseTest {
     @Test
     public void loginTest()  {
         basePage.go();
-        basePage.fillLoginModal("krasilnikovqualitylab", "quality1395");
-        mailPage.createLetterButtonClick();
-        //заполняю поле "тема", используя рандомное четырёхзначное число для последующей проверки совпадения
+        basePage.fillLoginModal("testuser", "testpassword");
+        mailPage.clickCreateLetterButton();
         newLetterPage.fillTheme();
         newLetterPage.fillDestinationAddress("chvvplrzmbutmfzfzj@tmmcv.com");
-        newLetterPage.fillMessageBodyAndSend("Добрый день! Меня зовут Красильников Евгений, я матёрый IT-специалист");
-        //проверяю наличие сообщения "Письмо отправлено"
+        newLetterPage.fillMessageBodyAndSend("Hello! This is a test message from an automated test.");
         newLetterPage.checkMessage();
-        //Проверяем, что тема последнего отправленного сообщения совпадает с нашим ключём
-        sentLettersPage.checkLastLetterTheme(NewLetterPage.letterTheme);
+        sentLettersPage.checkLastLetterTheme(NewLetterPage.LETTER_THEME);
     }
 
 }

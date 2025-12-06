@@ -6,8 +6,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import java.time.Duration;
-
 import static org.openqa.selenium.support.PageFactory.initElements;
 
 public class LoginModal {
@@ -17,7 +15,7 @@ public class LoginModal {
     @FindBy(css = "input[name='password']")
     private WebElement passwordInput;
     @FindBy(css = "[data-test-id=next-button]")
-    protected WebElement enterPasswordButton;
+    private WebElement nextButton;
     private WebDriver driver;
 
     public LoginModal(WebDriver driver) {
@@ -33,7 +31,7 @@ public class LoginModal {
         }
         driver.switchTo().frame(driver.findElement(By.className("ag-popup__frame__layout__iframe")));
         loginInput.sendKeys(login);
-        enterPasswordButton.click();
+        nextButton.click();
         passwordInput.sendKeys(password);
         passwordInput.sendKeys(Keys.ENTER);
         driver.switchTo().defaultContent();

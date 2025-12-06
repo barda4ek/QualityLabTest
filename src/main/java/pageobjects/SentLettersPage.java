@@ -10,7 +10,7 @@ import static org.testng.Assert.assertTrue;
 
 public class SentLettersPage {
     protected WebDriver driver;
-    String url = "https://e.mail.ru/sent/";
+    private static final String URL = "https://e.mail.ru/sent/";
 
     public SentLettersPage(WebDriver driver) {
         initElements(driver, this);
@@ -18,7 +18,7 @@ public class SentLettersPage {
     }
 
     public void go() {
-        driver.get(url);
+        driver.get(URL);
     }
 
     @FindBy(css = "div[role=\"rowgroup\"] > a:nth-of-type(1) .llc__subject")
@@ -28,7 +28,6 @@ public class SentLettersPage {
         go();
         String actualTheme = lastSentMessage.getText();
         assertEquals(actualTheme, expectedTheme);
-        System.out.printf("\n %S is equal to Expected %S \n", actualTheme, expectedTheme);
     }
 
 }

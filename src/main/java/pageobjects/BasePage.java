@@ -13,10 +13,10 @@ public class BasePage {
 
     public void fillLoginModal(String login, String password) {
         closePopUp();
-        loginButtonClick();
+        clickLoginButton();
         loginModal.fillModal(login, password);
     }
-    protected String URL = "https://mail.ru/";
+    private static final String URL = "https://mail.ru/";
 
     public BasePage(WebDriver driver) {
         this.driver = driver;
@@ -28,12 +28,12 @@ public class BasePage {
         driver.get(URL);
     }
 
-    @FindBy(css = "#mailbox > div.logged-out-one-click.svelte-giypkm > button") //]
+    @FindBy(css = "#mailbox > div.logged-out-one-click.svelte-giypkm > button")
     protected WebElement loginButton;
     public void closePopUp() {
         driver.findElement(By.linkText("Отклонить")).click();
     }
-    public void loginButtonClick() {
+    public void clickLoginButton() {
         loginButton.click();
     }
 

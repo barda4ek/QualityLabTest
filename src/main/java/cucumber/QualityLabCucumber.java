@@ -15,7 +15,6 @@ import pageobjects.SentLettersPage;
 
 public class QualityLabCucumber extends QualityLabCucumberRunner {
 
-    // BasePage basePage;
     protected NewLetterPage newLetterPage;
     protected MailPage mailPage;
     protected SentLettersPage sentLettersPage;
@@ -34,7 +33,7 @@ public class QualityLabCucumber extends QualityLabCucumberRunner {
     @And("I click Compose new letter")
     public void iClickComposeNewLetter(){
         mailPage = new MailPage(driver);
-        mailPage.createLetterButtonClick();
+        mailPage.clickCreateLetterButton();
     }
 
     @And("I fill theme with randomKey")
@@ -43,7 +42,6 @@ public class QualityLabCucumber extends QualityLabCucumberRunner {
         newLetterPage.fillTheme();
     }
 
-    //chvvplrzmbutmfzfzj@tmmcv.com
     @And("^I fill destination address: ([^\"]*)$")
     public void iFillDestination(String query){
         newLetterPage.fillDestinationAddress(query);
@@ -51,7 +49,7 @@ public class QualityLabCucumber extends QualityLabCucumberRunner {
 
     @And("I fill message body and send.")
     public void iFillMessageBody(){
-        newLetterPage.fillMessageBodyAndSend("Добрый день! Меня зовут Красильников Евгений, я матёрый IT-специалист");
+        newLetterPage.fillMessageBodyAndSend("Hello! This is a test message from an automated test.");
     }
 
     @Then("I check message \"Сообщение отправлено\"")
@@ -60,9 +58,9 @@ public class QualityLabCucumber extends QualityLabCucumberRunner {
     }
 
     @And("I check if the last sent letter's theme is equal to Expected")
-    public void iAmOnTheHouseAndGardenPage(){
+    public void iCheckLastSentLetterTheme(){
         sentLettersPage = new SentLettersPage(driver);
-        sentLettersPage.checkLastLetterTheme(NewLetterPage.letterTheme);
+        sentLettersPage.checkLastLetterTheme(NewLetterPage.LETTER_THEME);
     }
 
 
